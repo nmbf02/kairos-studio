@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/kairosstudio.rd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-off-white/80 hover:text-gold transition-colors"

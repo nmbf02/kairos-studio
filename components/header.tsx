@@ -71,7 +71,7 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com/kairosstudio.rd/" target="_blank" rel="noopener noreferrer">
               <Instagram
                 className={cn(
                   "h-5 w-5 transition-colors duration-300 hover:text-gold",
@@ -125,7 +125,7 @@ export default function Header() {
                 <div className="mt-auto py-6 border-t">
                   <div className="flex items-center justify-center space-x-6">
                     <Link
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/kairosstudio.rd/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-slate-700 hover:text-gold transition-colors"

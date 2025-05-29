@@ -78,11 +78,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium text-blue-med">Redes Sociales</h3>
                     <div className="flex space-x-4 mt-2">
-                      <Link href="https://instagram.com" className="text-slate-700 hover:text-gold transition-colors">
-                        @kairosstudio
+                      <Link href="https://www.instagram.com/kairosstudio.rd/" className="text-slate-700 hover:text-gold transition-colors">
+                        Instagram
                       </Link>
                       <Link href="https://tiktok.com" className="text-slate-700 hover:text-gold transition-colors">
-                        @kairosstudio
+                        Tiktok
                       </Link>
                     </div>
                   </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-off-white rounded-none">
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.instagram.com/kairosstudio.rd/" target="_blank" rel="noopener noreferrer">
                 Síguenos en Instagram
                 <Instagram className="ml-2 h-4 w-4" />
               </Link>
