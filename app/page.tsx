@@ -1,321 +1,123 @@
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Coffee, Camera, CalendarDays } from "lucide-react"
-import TestimonialCard from "@/components/testimonial-card"
-import BlogCard from "@/components/blog-card"
+import { MotionEffects } from "./motion-effects";
+
+const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[90vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10" />
-        <Image
-          src="/placeholder.svg?height=1080&width=1920"
-          alt="Kairós Studio"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-6">
-          <div className="max-w-3xl space-y-6">
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-off-white tracking-tight">
-              Kairós Studio
-            </h1>
-            <p className="text-xl md:text-2xl text-off-white/90 font-light italic">
-              Donde el arte, el café y la creatividad convergen.
-            </p>
-            <Button asChild size="lg" className="mt-8 bg-gold hover:bg-gold/90 text-off-white rounded-none">
-              <Link href="/coffee-box">
-                Descubre Kairós Coffee Box
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+    <main className="horizontal-scroll" data-horizontal-scroll>
+      <MotionEffects />
+      <header className="nav-shell">
+        <a className="brand" href="#inicio" aria-label="Kairós Studio, inicio">
+          <span className="brand-mark">K</span>
+          <span>Kairós Studio</span>
+        </a>
+        <nav className="desktop-nav" aria-label="Navegación principal">
+          <a href="#experiencia">Experiencia</a>
+          <a href="#espacios">Espacios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#coffee-box">Coffee Box</a>
+        </nav>
+        <a className="nav-cta" href="#contacto">Reservar <Arrow /></a>
+      </header>
+
+      <section className="hero" id="inicio">
+        <div className="animated-mesh" />
+        <div className="orb orb-one" />
+        <div className="orb orb-two" />
+        <div className="hero-grain" />
+        <div className="hero-content">
+          <p className="eyebrow light"><span /> Santiago · República Dominicana</p>
+          <h1>El momento<br />perfecto <em>para crear.</em></h1>
+          <div className="hero-bottom">
+            <p>Un punto de encuentro donde el café, el arte y la fotografía conviven para despertar nuevas ideas.</p>
+            <a className="round-link" href="#espacios" aria-label="Explorar los espacios">↓</a>
+          </div>
+        </div>
+        <div className="vertical-note">KAIRÓS · EL TIEMPO OPORTUNO</div>
+      </section>
+
+      <section className="intro" id="experiencia">
+        <div>
+          <p className="eyebrow"><span /> La experiencia</p>
+          <p className="section-number">01</p>
+        </div>
+        <div className="intro-copy">
+          <h2>No es solo un lugar.<br />Es una <em>pausa con intención.</em></h2>
+          <p>Kairós nace para quienes buscan algo más que una mesa: un ambiente que invita a conversar, concentrarse, imaginar y crear a su propio ritmo.</p>
+          <div className="pill-row">
+            <span>Café de especialidad</span><span>Arte local</span><span>Estudio creativo</span>
           </div>
         </div>
       </section>
 
-      {/* About Preview Section */}
-      <section className="py-20 bg-off-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-block border-b-2 border-gold pb-2 mb-4">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-blue-med">Sobre Nosotros</h2>
-              </div>
-              <p className="text-lg text-slate-700">
-                Kairós Studio nace como un espacio donde el tiempo se detiene para dar paso a la creatividad y el
-                bienestar. Inspirados en la belleza atemporal de la arquitectura griega e italiana, hemos creado un
-                santuario para artistas, soñadores y amantes del café.
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-4 border-blue-med text-blue-med hover:bg-blue-med/10 rounded-none"
-              >
-                <Link href="/about">
-                  Conoce nuestra historia
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] w-full overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=800&width=600"
-                alt="Kairós Studio Interior"
-                fill
-                className="object-cover rounded-sm"
-              />
-              <div className="absolute bottom-0 right-0 bg-gold p-4 text-off-white font-serif italic">
-                Un espacio para inspirar
-              </div>
-            </div>
-          </div>
+      <section className="spaces" id="espacios">
+        <div className="spaces-heading">
+          <div><p className="eyebrow light"><span /> Tres niveles, una experiencia</p><p className="section-number light-text">02</p></div>
+          <h2>Cada planta,<br /><em>un nuevo ritmo.</em></h2>
+        </div>
+        <div className="space-grid">
+          <article className="space-card cafe">
+            <div className="card-art"><span>☕</span></div>
+            <p>PLANTA 01</p><h3>Café & encuentro</h3>
+            <span className="card-description">Sabores honestos, luz cálida y mesas para quedarse.</span>
+          </article>
+          <article className="space-card gallery">
+            <div className="card-art"><span>◇</span></div>
+            <p>PLANTA 02</p><h3>Galería & ideas</h3>
+            <span className="card-description">Exhibiciones, talleres y conversaciones que conectan.</span>
+          </article>
+          <article className="space-card studio">
+            <div className="card-art"><span>◉</span></div>
+            <p>PLANTA 03</p><h3>Estudio & enfoque</h3>
+            <span className="card-description">Un espacio flexible para producir, retratar y colaborar.</span>
+          </article>
         </div>
       </section>
 
-      {/* Experiences Preview */}
-      <section className="py-20 bg-terracotta/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-blue-med mb-4">Nuestras Experiencias</h2>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              Cada planta de Kairós Studio ofrece una experiencia única diseñada para estimular tus sentidos y despertar
-              tu creatividad.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-off-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300 group">
-              <div className="flex justify-between items-start mb-6">
-                <Coffee className="h-10 w-10 text-gold" />
-                <span className="text-sm font-serif italic text-slate-500">Primera Planta</span>
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-blue-med mb-4 group-hover:text-gold transition-colors duration-300">
-                Cafetería & Manualidades
-              </h3>
-              <p className="text-slate-700 mb-6">
-                Disfruta de nuestro café de especialidad mientras participas en talleres de manualidades y arte.
-              </p>
-              <Link
-                href="/experiences#cafeteria"
-                className="text-blue-med hover:text-gold flex items-center font-medium"
-              >
-                Explorar
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="bg-off-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300 group">
-              <div className="flex justify-between items-start mb-6">
-                <Camera className="h-10 w-10 text-gold" />
-                <span className="text-sm font-serif italic text-slate-500">Segunda Planta</span>
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-blue-med mb-4 group-hover:text-gold transition-colors duration-300">
-                Escenarios Fotográficos
-              </h3>
-              <p className="text-slate-700 mb-6">
-                Espacios diseñados para sesiones fotográficas profesionales con iluminación y decoración perfectas.
-              </p>
-              <Link
-                href="/experiences#fotografia"
-                className="text-blue-med hover:text-gold flex items-center font-medium"
-              >
-                Explorar
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="bg-off-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300 group">
-              <div className="flex justify-between items-start mb-6">
-                <CalendarDays className="h-10 w-10 text-gold" />
-                <span className="text-sm font-serif italic text-slate-500">Tercera Planta</span>
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-blue-med mb-4 group-hover:text-gold transition-colors duration-300">
-                Salón de Eventos
-              </h3>
-              <p className="text-slate-700 mb-6">
-                Un espacio versátil para celebraciones, exposiciones, talleres y eventos corporativos.
-              </p>
-              <Link href="/experiences#eventos" className="text-blue-med hover:text-gold flex items-center font-medium">
-                Explorar
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
+      <section className="about" id="nosotros">
+        <div className="arch-visual"><div className="sun" /><span>K</span></div>
+        <div className="about-copy">
+          <p className="eyebrow"><span /> Nuestra filosofía</p>
+          <p className="section-number">03</p>
+          <h2>Crear también es<br /><em>saber detenerse.</em></h2>
+          <p>En griego, <strong>kairós</strong> es el instante adecuado: ese momento especial en el que algo importante sucede. Diseñamos cada rincón para ayudarte a encontrarlo.</p>
+          <a className="text-link" href="#contacto">Conoce nuestra historia <Arrow /></a>
         </div>
       </section>
 
-      {/* Coffee Box Preview */}
-      <section className="py-20 bg-blue-med text-off-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <div className="relative h-[500px] w-full overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=1000&width=800"
-                  alt="Kairós Coffee Box"
-                  fill
-                  className="object-cover rounded-sm"
-                />
-                <div className="absolute top-0 left-0 bg-gold p-4 text-off-white font-serif italic">
-                  Edición Limitada
-                </div>
-              </div>
-            </div>
-            <div className="space-y-6 order-1 md:order-2">
-              <div className="inline-block border-b-2 border-gold pb-2 mb-4">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold">Kairós Coffee Box</h2>
-              </div>
-              <p className="text-lg">
-                Una experiencia sensorial en una caja. Nuestro café de especialidad acompañado de productos artesanales
-                cuidadosamente seleccionados para despertar tu creatividad en casa.
-              </p>
-              <ul className="space-y-2 mt-6">
-                <li className="flex items-center">
-                  <div className="h-2 w-2 bg-gold rounded-full mr-3"></div>
-                  <span>Café de especialidad tostado artesanalmente</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="h-2 w-2 bg-gold rounded-full mr-3"></div>
-                  <span>Taza de cerámica hecha a mano</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="h-2 w-2 bg-gold rounded-full mr-3"></div>
-                  <span>Cuaderno de notas para inspirarte</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="h-2 w-2 bg-gold rounded-full mr-3"></div>
-                  <span>Productos sorpresa que cambian cada mes</span>
-                </li>
-              </ul>
-              <Button asChild size="lg" className="mt-8 bg-gold hover:bg-gold/90 text-off-white rounded-none">
-                <Link href="/coffee-box">
-                  Comprar ahora
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
+      <section className="coffee-teaser" id="coffee-box">
+        <div className="coffee-orbit orbit-one" />
+        <div className="coffee-orbit orbit-two" />
+        <div className="coffee-teaser-copy">
+          <p className="eyebrow light"><span /> Una experiencia para llevar</p>
+          <p className="section-number light-text">04</p>
+          <h2>Kairós<br /><em>Coffee Box.</em></h2>
+          <p>Una selección de café, detalles y pequeños rituales creados para convertir cualquier pausa en tu momento Kairós.</p>
+          <a className="coffee-button" href="/coffee-box">Descubrir la Coffee Box <Arrow /></a>
         </div>
+        <div className="coffee-box-art" aria-hidden="true">
+          <div className="box-lid"><span>KAIRÓS</span><small>COFFEE BOX</small></div>
+          <div className="box-shadow" />
+          <span className="bean bean-a">●</span><span className="bean bean-b">●</span><span className="bean bean-c">●</span>
+        </div>
+        <p className="coffee-side-note">CAFÉ · DETALLES · MOMENTOS</p>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-off-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-blue-med mb-4">
-              Lo que dicen nuestros clientes
-            </h2>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              Experiencias compartidas por quienes han visitado Kairós Studio y han disfrutado de nuestros espacios y
-              productos.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              quote="Kairós Studio se ha convertido en mi lugar favorito para trabajar. El ambiente, el café y la energía creativa son incomparables."
-              author="María García"
-              role="Diseñadora Gráfica"
-              image="/placeholder.svg?height=200&width=200"
-            />
-
-            <TestimonialCard
-              quote="Las sesiones fotográficas en sus escenarios son increíbles. La luz natural y la decoración hacen que cada foto sea especial."
-              author="Carlos Rodríguez"
-              role="Fotógrafo"
-              image="/placeholder.svg?height=200&width=200"
-            />
-
-            <TestimonialCard
-              quote="La Kairós Coffee Box es mi regalo mensual para mí misma. Cada mes me sorprenden con productos que inspiran mi creatividad."
-              author="Laura Martínez"
-              role="Escritora"
-              image="/placeholder.svg?height=200&width=200"
-            />
-          </div>
+      <section className="contact" id="contacto">
+        <p className="eyebrow light centered"><span /> Tu próximo momento empieza aquí <span /></p>
+        <h2>Ven a vivir<br /><em>Kairós.</em></h2>
+        <p className="contact-lead">Reserva el estudio, inscríbete en una experiencia o simplemente ven por un buen café.</p>
+        <div className="contact-actions">
+          <a className="primary-button" href="mailto:hola@kairosstudio.do">Escríbenos <Arrow /></a>
+          <a className="secondary-button" href="#inicio">Ver ubicación</a>
         </div>
+        <footer>
+          <a className="brand footer-brand" href="#inicio"><span className="brand-mark">K</span><span>Kairós Studio</span></a>
+          <div><p>Santiago, República Dominicana</p><p>Lun–Sáb · 8:00 AM–8:00 PM</p></div>
+          <div><a href="#">Instagram</a><a href="#">TikTok</a><a href="mailto:hola@kairosstudio.do">Email</a></div>
+          <span>© 2026 Kairós Studio</span>
+        </footer>
       </section>
-
-      {/* Blog Preview */}
-      <section className="py-20 bg-terracotta/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-blue-med mb-4">Nuestro Blog</h2>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              Inspiración, consejos creativos y novedades sobre nuestros talleres y eventos.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <BlogCard
-              title="El arte de preparar el café perfecto"
-              excerpt="Descubre los secretos para preparar una taza de café que despierte todos tus sentidos."
-              date="12 Abril, 2025"
-              image="/placeholder.svg?height=400&width=600"
-              category="Café"
-              slug="/blog/cafe-perfecto"
-            />
-
-            <BlogCard
-              title="5 técnicas de acuarela para principiantes"
-              excerpt="Aprende estas sencillas técnicas y comienza tu viaje en el mundo de la acuarela."
-              date="5 Abril, 2025"
-              image="/placeholder.svg?height=400&width=600"
-              category="Arte"
-              slug="/blog/tecnicas-acuarela"
-            />
-
-            <BlogCard
-              title="Próximos talleres de primavera"
-              excerpt="Conoce todos los talleres que tenemos preparados para esta temporada de renovación y creatividad."
-              date="28 Marzo, 2025"
-              image="/placeholder.svg?height=400&width=600"
-              category="Eventos"
-              slug="/blog/talleres-primavera"
-            />
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              variant="outline"
-              className="border-blue-med text-blue-med hover:bg-blue-med/10 rounded-none"
-            >
-              <Link href="/blog">
-                Ver todos los artículos
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-med text-off-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6">¿Listo para vivir la experiencia Kairós?</h2>
-          <p className="text-xl max-w-2xl mx-auto mb-10">
-            Visítanos o contáctanos para reservar tu espacio, organizar un evento o solicitar información sobre nuestros
-            productos.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-off-white rounded-none">
-              <Link href="/contact">Contáctanos</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-off-white text-off-white hover:bg-off-white/10 rounded-none"
-            >
-              <Link href="/experiences">Explorar Experiencias</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+    </main>
+  );
 }
