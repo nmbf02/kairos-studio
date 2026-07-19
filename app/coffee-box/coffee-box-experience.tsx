@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { LiquidCursor } from "../liquid-cursor";
+import { LiquidBackground } from "../liquid-background";
 
 const boxes = [
   { name: "Pausa", type: "Esencial", price: "RD$ 1,250", tone: "terracotta", description: "Para regalarte una pausa cotidiana con intención.", items: ["Café de origen · 250 g", "Galletas artesanales", "Tarjeta de ritual"] },
@@ -50,13 +52,15 @@ export function CoffeeBoxExperience() {
 
   return (
     <main className="cbx-shell" ref={scroller}>
+      <LiquidCursor />
       <header className="cbx-nav">
         <a className="cbx-brand" href="/"><span>K</span><div><strong>Kairós</strong><small>COFFEE BOX</small></div></a>
         <nav>{["Inicio", "La experiencia", "Colección", "Ordenar"].map((label, index) => <button key={label} className={section === index ? "active" : ""} onClick={() => go(index)}>{label}</button>)}</nav>
         <a className="cbx-studio" href="/">Kairós Studio ↗</a>
       </header>
 
-      <section className="cbx-panel cbx-hero">
+      <section className="cbx-panel cbx-hero liquid-section">
+        <LiquidBackground subtle />
         <div className="cbx-noise" />
         <div className="cbx-hero-copy">
           <p className="cbx-kicker"><span /> El ritual llega a ti</p>
@@ -72,7 +76,8 @@ export function CoffeeBoxExperience() {
         <div className="cbx-scroll-note">DESLIZA PARA EXPLORAR <span>→</span></div>
       </section>
 
-      <section className="cbx-panel cbx-story">
+      <section className="cbx-panel cbx-story liquid-section">
+        <LiquidBackground subtle />
         <div className="cbx-story-title"><p className="cbx-kicker"><span /> 01 · La experiencia</p><h2>Todo empieza<br />con una <em>pausa.</em></h2><p>Cada elemento de la Coffee Box ha sido elegido para acompañar un pequeño ritual: abrir, preparar, respirar y disfrutar.</p></div>
         <div className="cbx-ingredients">
           <article><div className="ingredient-icon coffee">✦</div><span>01</span><h3>Café con carácter</h3><p>Granos seleccionados, tostados para resaltar su origen, aroma y equilibrio.</p></article>
@@ -81,7 +86,8 @@ export function CoffeeBoxExperience() {
         </div>
       </section>
 
-      <section className="cbx-panel cbx-collection">
+      <section className="cbx-panel cbx-collection liquid-section">
+        <LiquidBackground subtle />
         <div className="cbx-collection-head"><div><p className="cbx-kicker light"><span /> 02 · La colección</p><h2>Elige tu<br /><em>momento.</em></h2></div><p>Tres cajas, tres formas de detener el tiempo. Selecciona una para descubrir lo que contiene.</p></div>
         <div className="cbx-box-selector">
           {boxes.map((box, index) => <button key={box.name} onClick={() => setActive(index)} className={`cbx-option ${active === index ? "selected" : ""}`}><div className={`cbx-mini-product ${box.tone}`}><span>K</span><small>{box.type}</small></div><div><small>0{index + 1}</small><h3>{box.name}</h3><p>{box.price}</p></div></button>)}
@@ -95,7 +101,8 @@ export function CoffeeBoxExperience() {
         </div>}
       </section>
 
-      <section className="cbx-panel cbx-order">
+      <section className="cbx-panel cbx-order liquid-section">
+        <LiquidBackground subtle />
         <div className="cbx-order-card"><p className="cbx-kicker light"><span /> 03 · Tu próximo momento</p><h2>Hecha para regalar.<br /><em>También para ti.</em></h2><p>Selecciona tu caja, personaliza el mensaje y coordina la entrega con nuestro equipo.</p><div className="cbx-order-actions"><a href={`mailto:hola@kairosstudio.do?subject=${subject}`}>Ordenar {selected.name} <span>↗</span></a><button onClick={() => go(2)}>Cambiar selección</button></div></div>
         <div className="cbx-order-summary"><span>Tu selección</span><div className={`cbx-summary-box ${selected.tone}`}><i>K</i></div><h3>{selected.name}</h3><p>{selected.price}</p><small>Entrega disponible en Santiago</small></div>
         <footer><span>© 2026 Kairós Coffee Box</span><span>Santiago · República Dominicana</span><a href="/">Volver a Kairós Studio</a></footer>

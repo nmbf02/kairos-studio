@@ -1,4 +1,5 @@
 import { MotionEffects } from "./motion-effects";
+import { LiquidBackground } from "./liquid-background";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -20,8 +21,8 @@ export default function Home() {
         <a className="nav-cta" href="#contacto">Reservar <Arrow /></a>
       </header>
 
-      <section className="hero" id="inicio">
-        <div className="animated-mesh" />
+      <section className="hero liquid-section" id="inicio">
+        <LiquidBackground />
         <div className="orb orb-one" />
         <div className="orb orb-two" />
         <div className="hero-grain" />
@@ -36,7 +37,8 @@ export default function Home() {
         <div className="vertical-note">KAIRÓS · EL TIEMPO OPORTUNO</div>
       </section>
 
-      <section className="intro" id="experiencia">
+      <section className="intro liquid-section" id="experiencia">
+        <LiquidBackground subtle />
         <div>
           <p className="eyebrow"><span /> La experiencia</p>
           <p className="section-number">01</p>
@@ -50,7 +52,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="spaces" id="espacios">
+      <section className="spaces liquid-section" id="espacios">
+        <LiquidBackground subtle />
         <div className="spaces-heading">
           <div><p className="eyebrow light"><span /> Tres niveles, una experiencia</p><p className="section-number light-text">02</p></div>
           <h2>Cada planta,<br /><em>un nuevo ritmo.</em></h2>
@@ -74,7 +77,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about" id="nosotros">
+      <section className="about liquid-section" id="nosotros">
+        <LiquidBackground subtle />
         <div className="arch-visual"><div className="sun" /><span>K</span></div>
         <div className="about-copy">
           <p className="eyebrow"><span /> Nuestra filosofía</p>
@@ -85,7 +89,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="coffee-teaser" id="coffee-box">
+      <section className="coffee-teaser liquid-section" id="coffee-box">
+        <LiquidBackground subtle />
         <div className="coffee-orbit orbit-one" />
         <div className="coffee-orbit orbit-two" />
         <div className="coffee-teaser-copy">
@@ -103,7 +108,8 @@ export default function Home() {
         <p className="coffee-side-note">CAFÉ · DETALLES · MOMENTOS</p>
       </section>
 
-      <section className="contact" id="contacto">
+      <section className="contact liquid-section" id="contacto">
+        <LiquidBackground subtle />
         <p className="eyebrow light centered"><span /> Tu próximo momento empieza aquí <span /></p>
         <h2>Ven a vivir<br /><em>Kairós.</em></h2>
         <p className="contact-lead">Reserva el estudio, inscríbete en una experiencia o simplemente ven por un buen café.</p>

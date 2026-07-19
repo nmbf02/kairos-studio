@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { LiquidCursor } from "./liquid-cursor";
 
 export function MotionEffects() {
   const [cursor, setCursor] = useState({ x: -100, y: -100, active: false });
@@ -35,5 +36,5 @@ export function MotionEffects() {
     document.documentElement.addEventListener("mouseleave", leave);
     return () => { observer.disconnect(); window.removeEventListener("pointermove", move); scroller?.removeEventListener("wheel", wheel); document.documentElement.removeEventListener("mouseleave", leave); };
   }, []);
-  return <><div className="cursor-glow" aria-hidden="true" /><div className={`custom-cursor ${cursor.active ? "active" : ""}`} style={{ transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0)` }} aria-hidden="true" /></>;
+  return <LiquidCursor />;
 }
